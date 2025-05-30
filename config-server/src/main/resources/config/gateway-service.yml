@@ -4,11 +4,13 @@ server:
 spring:
   cloud:
     gateway:
-      discovery:
-        locator:
-          enabled: true
-      routes:
-      # You should add here the filters, routes, load balancing, etc
+      server:
+        webflux:
+          discovery:
+            locator:
+              enabled: true
+          routes:
+          # You should add here the filters, routes, load balancing, etc
 eureka:
   client:
     register-with-eureka: false
