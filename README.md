@@ -6,7 +6,7 @@
 This project is a lightweight and preconfigured starter template that sets up the foundational infrastructure for building microservices using Spring Cloud. It includes essential components to enable service discovery, routing, and centralized configuration management.
 
 ## 🔧 Included Components:
-✅ **Spring Boot 3.4.6** – The project inherits Spring Boot 3.4.6 to all modules.
+✅ **Spring Boot 3.5.0** – The project inherits Spring Boot 3.5.0 to all modules.
 
 ✅ **Spring Cloud BOM** – The project inherits Spring Boot and imports Spring Cloud dependencies via a managed BOM.
 
@@ -19,47 +19,12 @@ This project is a lightweight and preconfigured starter template that sets up th
 > [!IMPORTANT]
 > Doesn't include Structured Modular Design and Sample Services with their Feign Clients
 
-> [!WARNING]
-> Actually Spring Boot has a newer version 3.5.0 but it's not compatible with Spring Cloud latest version 2024.0.1, at the time Spring Boot 3.5.0 is compatible with 2025.0.0-RC1, you can change it by adding to the pom this lines below   
-
-``PARENT POM.XML``
-```xml
-
-<!-- repositories needs to be added to the pom.xml -->
-<repositories>
-    <repository>
-        <id>spring-milestones</id>
-        <name>Spring Milestones</name>
-        <url>https://repo.spring.io/milestone</url>
-        <snapshots>
-            <enabled>false</enabled>
-        </snapshots>
-    </repository>
-</repositories>
-
-<!-- All this lines already exists, you only need to update the version -->
-<dependencyManagement>
-<dependencies>
-    <dependency>
-        <groupId>org.springframework.cloud</groupId>
-        <artifactId>spring-cloud-dependencies</artifactId>
-        <version>2025.0.0-RC1</version> <!-- change this to 2025 version -->
-        <type>pom</type>
-        <scope>import</scope>
-    </dependency>
-</dependencies>
-</dependencyManagement>
-
-<parent>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-parent</artifactId>
-    <version>3.5.0</version> <!-- change this to the lastest Spring Boot version as needed -->
-    <relativePath/>
-</parent>
-```
-
-
-
+> [!IMPORTANT]
+> Spring-Cloud 2025.0.0 just released so now it's compatible with Spring Boot 3.5.X
+> You can read the [release Notes](https://spring.io/blog/2025/05/29/spring-cloud-2025-0-0-is-abvailable)
+>
+> It's also important to know these properties changed: 
+>![properties](/assets/{0C74AB65-B0B2-49B9-87C9-E9C6E10ED6A4}.png)
 
 ## Configurations
 It brings all configurations in config server like it shows in the diagram [Microservices-template](#Introducing) this are the steps you should follow after creating new modules
